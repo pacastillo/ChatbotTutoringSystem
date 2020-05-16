@@ -1,3 +1,4 @@
+
 import nltk
 from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
@@ -12,10 +13,9 @@ intents = json.loads(open('intents.json').read())
 words = pickle.load(open('words.pkl','rb'))
 classes = pickle.load(open('classes.pkl','rb'))
 
+
 def clean_up_sentence(sentence):
-    # tokenize the pattern - split words into array
     sentence_words = nltk.word_tokenize(sentence)
-    # stem each word - create short form for word
     sentence_words = [lemmatizer.lemmatize(word.lower()) for word in sentence_words]
     return sentence_words
 
@@ -25,10 +25,10 @@ def bow(sentence, words, show_details=True):
     # tokenize the pattern
     sentence_words = clean_up_sentence(sentence)
     # bag of words - matrix of N words, vocabulary matrix
-    bag = [0]*len(words)  
+    bag = [0]*len(words)
     for s in sentence_words:
         for i,w in enumerate(words):
-            if w == s: 
+            if w == s:
                 # assign 1 if current word is in the vocabulary position
                 bag[i] = 1
                 if show_details:
@@ -39,7 +39,7 @@ def predict_class(sentence, model):
     # filter out predictions below a threshold
     p = bow(sentence, words,show_details=False)
     res = model.predict(np.array([p]))[0]
-    ERROR_THRESHOLD = 0.05
+    ERROR_THRESHOLD = 0.25
     results = [[i,r] for i,r in enumerate(res) if r>ERROR_THRESHOLD]
     # sort by strength of probability
     results.sort(key=lambda x: x[1], reverse=True)
@@ -74,19 +74,19 @@ def send():
 
     if msg != '':
         ChatLog.config(state=NORMAL)
-        ChatLog.insert(END, "USER:  " + msg + '\n\n')
+        ChatLog.insert(END, "You: " + msg + '\n\n')
         ChatLog.config(foreground="#442265", font=("Verdana", 12 ))
-    
+
         res = chatbot_response(msg)
-        ChatLog.insert(END, "CHATBOT:  " + res + '\n\n')
-            
+        ChatLog.insert(END, "Bot: " + res + '\n\n')
+
         ChatLog.config(state=DISABLED)
         ChatLog.yview(END)
- 
+
 
 base = Tk()
-base.title("chatbot")
-base.geometry("300x400")
+base.title("Hello")
+base.geometry("400x500")
 base.resizable(width=FALSE, height=FALSE)
 
 #Create Chat window
@@ -99,8 +99,9 @@ scrollbar = Scrollbar(base, command=ChatLog.yview, cursor="heart")
 ChatLog['yscrollcommand'] = scrollbar.set
 
 #Create Button to send message
-SendButton = Button(base, font=("Verdana",12,'bold'), width="12", height=5,
-                    bd=0, command= send )
+SendButton = Button(base, font=("Verdana",12,'bold'), text="Send", width="12", height=5,
+                    bd=0, bg="#32de97", activebackground="#3c9d9b",fg='#ffffff',
+                    command= send )
 
 #Create the box to enter message
 EntryBox = Text(base, bd=0, bg="white",width="29", height="5", font="Arial")
@@ -108,9 +109,9 @@ EntryBox = Text(base, bd=0, bg="white",width="29", height="5", font="Arial")
 
 
 #Place all components on the screen
-scrollbar.place(x=350,y=6, height=400)
-ChatLog.place(x=6,y=6, height=400, width=300)
-EntryBox.place(x=150, y=300, height=60, width=200)
-SendButton.place(x=6, y=300, height=60)
+scrollbar.place(x=376,y=6, height=386)
+ChatLog.place(x=6,y=6, height=386, width=370)
+EntryBox.place(x=128, y=401, height=90, width=265)
+SendButton.place(x=6, y=401, height=90)
 
 base.mainloop()
