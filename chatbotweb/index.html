@@ -1,0 +1,446 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+
+<title>Chatbot</title>
+
+<script type="text/javascript">
+  function llamada(){
+	var miinput = document.getElementById("pregunta").value;
+	//document.getElementsByName('micontent')[0].src = miinput;
+	document.getElementsByName('micontent')[0].src = 'http://mercurio.ugr.es:8080?name=' + miinput;
+  }
+</script>
+
+
+<style type="text/css">
+/* Standard theme styles */
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+body {
+  font-family: arial, helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0;
+}
+.ws-theme-header-inner,
+.ws-theme-body-inner,
+.ws-theme-footer-inner,
+.ws-theme-content-inner,
+.ws-theme-sidebar-inner {
+  position: relative;
+}
+.ws-theme-header-inner:after,
+.ws-theme-body-inner:after,
+.ws-theme-footer-inner:after,
+.ws-theme-content-inner:after,
+.ws-theme-sidebar-inner:after,
+.ws-theme-menu-inner:after {
+  content: " ";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+.ws-theme-content, .ws-theme-sidebar {
+  overflow-x: auto;
+}
+.ws-theme-footer {
+  text-align: right;
+}
+.ws-theme-footer a, .ws-theme-footer a:hover {
+  text-decoration: none;
+}
+@media (min-width: 768px) {
+  .ws-theme-container {
+    width: 750px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .ws-theme-content {
+    width: 550px;
+    min-height: 384px;
+    float: right;
+  }
+  .ws-theme-sidebar {
+    width: 200px;
+    float: left;
+  }
+}
+@media (min-width: 992px) {
+  .ws-theme-container {
+    width: 970px;
+  }
+  .ws-theme-content {
+    width: 770px;
+    min-height: 500px;
+  }
+}
+@media (min-width: 1200px) {
+  .ws-theme-container {
+    width: 1170px;
+  }
+  .ws-theme-content {
+    width: 970px;
+    min-height: 500px;
+  }
+}
+/* End standard theme styles */
+</style>
+<!--[if IE 8]>
+<style type="text/css">
+  .ws-theme-container {
+    width: 750px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .ws-theme-content {
+    width: 550px;
+    min-height: 384px;
+    float: right;
+  }
+  .ws-theme-sidebar {
+    width: 200px;
+    float: left;
+  }
+</style>
+<![endif]-->
+<style type="text/css">
+/* Theme-specific styles */
+body {
+  background-color: #AAA;
+}
+
+.ws-theme-container {
+  margin: 0 5px;
+}
+
+.ws-theme-header .WikiSearch .WikiSearchInput,
+.ws-theme-sidebar .WikiSearch .WikiSearchInput,
+.ws-theme-footer .WikiSearch .WikiSearchInput {
+  width: 100%;
+}
+
+.ws-theme-header,
+.ws-theme-footer {
+  color: #FFFFFF;
+}
+.ws-theme-header a,
+.ws-theme-footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.ws-theme-sidebar {
+  color: #000;
+}
+.ws-theme-sidebar a {
+  color: #27496A;
+  text-decoration: none;
+}
+
+.ws-theme-header a:hover,
+.ws-theme-sidebar a:hover,
+.ws-theme-footer a:hover {
+  text-decoration: underline;
+}
+.ws-theme-header img,
+.ws-theme-sidebar img,
+.ws-theme-footer img {
+  border: none;
+}
+
+.ws-theme-header,
+.ws-theme-sidebar {
+  display: none;
+}
+
+.ws-theme-content {
+  overflow-x: visible;
+}
+.ws-theme-content-inner {
+  background-color: #FFF;
+  padding: 20px;
+}
+
+.ws-theme-footer {
+  text-align: center;
+}
+.ws-theme-footer-inner {
+  background: #548EC4 url('./estilo_azul_gris_files/theme_glass.png');
+  padding: 15px;
+}
+.ws-theme-footer .WikiLicense img {
+  vertical-align: text-bottom;
+}
+
+@media (min-width: 768px) {
+  body {
+    background-color: #d4e0eb;
+  }
+
+  .ws-theme-container {
+    position: relative;
+    margin: 0 auto;
+    border: none;
+  }
+  .ws-theme-container:before {
+    box-shadow: -15px 0 15px -15px rgba(0,0,0,.625) inset;
+    content: " ";
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -15px;
+    width: 15px;
+  }
+  .ws-theme-container:after {
+    box-shadow: 15px 0 15px -15px rgba(0,0,0,.625) inset;
+    content: " ";
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: -15px;
+    width: 15px;
+  }
+
+  .ws-theme-header,
+  .ws-theme-sidebar {
+    display: block;
+  }
+
+  .ws-theme-header-inner {
+    background: #548EC4 url('./estilo_azul_gris_files/theme_glass.png');
+    min-height: 150px;
+    padding: 30px 25px;
+  }
+
+  .ws-theme-body-inner {
+    background-color: #9EBDDC;
+  }
+  .ws-theme-body-inner:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 200px;
+    background-color: #FFF;
+  }
+
+  .ws-theme-sidebar-inner {
+    padding: 10px;
+  }
+  .ws-theme-sidebar .WikiActions {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  .ws-theme-sidebar .WikiActions > li {
+    padding: 2px;
+  }
+  .ws-theme-sidebar .WikiCustomNav ol {
+    padding-left: 16px;
+  }
+  .ws-theme-sidebar .WikiCustomNav ol.includePageList {
+    padding-left: 0;
+  }
+  .ws-theme-sidebar .WikispacesNavbar {
+    margin: 0 -10px;
+    padding: 0 10px;
+  }
+  .ws-theme-sidebar .ws-theme-nav-edit {
+    color: #666;
+    text-align: center;
+  }
+  .ws-theme-sidebar .ws-theme-nav-edit a {
+    color: inherit;
+  }
+}
+/* End theme-specific styles */
+</style>
+<!--[if IE 8]>
+<style type="text/css">
+  body {
+    background-color: #d4e0eb;
+  }
+
+  .ws-theme-container {
+    position: relative;
+    margin: 0 auto;
+    border: none;
+  }
+  .ws-theme-container:before {
+    box-shadow: -15px 0 15px -15px rgba(0,0,0,.625) inset;
+    content: " ";
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -15px;
+    width: 15px;
+  }
+  .ws-theme-container:after {
+    box-shadow: 15px 0 15px -15px rgba(0,0,0,.625) inset;
+    content: " ";
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: -15px;
+    width: 15px;
+  }
+
+  .ws-theme-header,
+  .ws-theme-sidebar {
+    display: block;
+  }
+
+  .ws-theme-header-inner {
+    background: #548EC4 url('./estilo_azul_gris_files/theme_glass.png');
+    min-height: 150px;
+    padding: 30px 25px;
+  }
+
+  .ws-theme-body-inner {
+    background-color: #9EBDDC;
+  }
+  .ws-theme-body-inner:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 200px;
+    background-color: #FFF;
+  }
+
+  .ws-theme-sidebar-inner {
+    padding: 10px;
+  }
+  .ws-theme-sidebar .WikiActions {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  .ws-theme-sidebar .WikiActions > li {
+    padding: 2px;
+  }
+  .ws-theme-sidebar .WikiCustomNav ol {
+    padding-left: 16px;
+  }
+  .ws-theme-sidebar .WikiCustomNav ol.includePageList {
+    padding-left: 0;
+  }
+  .ws-theme-sidebar .WikispacesNavbar {
+    margin: 0 -10px;
+    padding: 0 10px;
+  }
+  .ws-theme-sidebar .ws-theme-nav-edit {
+    color: #666;
+    text-align: center;
+  }
+  .ws-theme-sidebar .ws-theme-nav-edit a {
+    color: inherit;
+  }
+</style>
+<![endif]-->
+
+
+
+</div>
+  </div></div>
+
+<!-- TODO: AQUI VA EL MARGEN QUE DEJA HASTA EL BORDE SUPERIOR (AHORA A 5px) -->
+<div style="margin-top: 5px;" id="js-fixed-header-offset">
+
+<header class="ws-theme-header" role="banner">
+  <div class="ws-theme-container">
+    <div class="ws-theme-header-inner">
+      
+<table class="WikiLogoTable WikiElement">
+<tbody><tr>
+  <td>
+    <img src="estilo_azul_gris_files/logo-shadow-40.png" alt="" height="40" width="40">
+  </td>
+  <td class="WikiLogoName">
+    <h1>Chatbot - PDIH</h1>
+  </td>
+</tr>
+</tbody></table>    </div>
+  </div>
+</header>
+
+<div class="ws-theme-body">
+  <div class="ws-theme-container">
+    <div class="ws-theme-body-inner">
+
+      <nav class="ws-theme-sidebar" role="navigation">
+
+      </nav>
+      
+      <main class="ws-theme-content" role="main">
+        <div class="ws-theme-content-inner">
+          <div class="contentBox">
+          <div class="innerContentBox">
+
+
+<div class="commentContainer">
+  <div class="commentSubject">
+  <div class="wiki wikiPage" id="content_view">
+
+ <H2>Your query:</H2>
+
+<input type="text" id="pregunta" name="pregunta" maxlength="100" size="50">
+<!-- <BR> <a href="#" onclick="llamada()">send</a>  -->
+<BR> 
+<input type= "submit" id= "btn1" value="send" onclick="llamada()"/>
+
+<H2>Chat:</H2>
+
+<iframe allowtransparency="true" style="background: #AAAAAA;" 
+	name="micontent" frameborder="no" border="0" scrolling="yes" height="300" width="600">
+</iframe>
+
+
+  </div>
+  </div>
+</div>
+
+</div></div>
+</div>
+
+
+</main>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+<footer class="ws-theme-footer" role="contentinfo"><div class="ws-theme-container">
+<div class="ws-theme-footer-inner">
+
+<div class="WikiFooterNav WikiElement">
+<a href="http://mercurio.ugr.es/pedro/docencia.html" class="js-help-trigger">http://mercurio.ugr.es/pedro/docencia.html</a>
+</div>
+<div class="WikiLicense WikiElement">
+(c) Pedro A. Castillo
+</div>
+
+</div>
+</div>
+</footer>
+
+
+
+</div>
+
+</body>
+</html>
+

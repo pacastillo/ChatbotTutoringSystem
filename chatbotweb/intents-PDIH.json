@@ -1,0 +1,114 @@
+{"intents": [
+        {"tag": "saludos",
+         "patterns": ["Hola", "como estás?", "hay alguien?","chao","qué tal?", "buenos días", "buenas tardes", "buenas noches", "buenas"],
+         "responses": ["hola, gracias por preguntar", "encantado de verte", "hola, cómo puedo ayudarte?"],
+         "context": [""]
+        },
+        {"tag": "despedidas",
+         "patterns": ["adios", "hasta luego", "taluego", "un placer chatear contigo, adios", "hasta la próxima"],
+         "responses": ["hasta pronto!", "que tengas un buen día", "Adios. Vuelve pronto", "Adios"],
+         "context": [""]
+        },
+        {"tag": "agradecimientos",
+         "patterns": ["gracias", "muchas gracias", "ha sido de ayuda", "muchísimas gracias", "agradecido"],
+         "responses": ["feliz de ayudarte!", "de nada!", "un placer"],
+         "context": [""]
+        },
+        {"tag": "sinpregunta",
+         "patterns": [],
+         "responses": ["perdón, no te he entendido", "deme más información, por favor", "no estoy seguro de qué me pides"],
+         "context": [""]
+        },
+
+        {"tag": "opciones",
+         "patterns": ["cómo me puedes ayudar?", "qué puedes hacer?", "qué sabes hacer?", "cómo eres útil?", "qué soporte das?"],
+         "responses": ["Te puedo dar información sobre la asignatura y responder dudas sobre esta.", "Puedes hacerme preguntas sobre cualquier tema de la asignatura. Te intentaré ayudar.", "Puedo ayudarte a resolver dudas sobre la asignatura."],
+         "context": [""]
+        },
+
+        {"tag": "asignatura",
+         "patterns": ["cómo se llama la asignatura?", "qué asignatura?", "qué es PDIH?", "qué se enseña en periféricos?", "qué se enseña en PDIH?", "cuáles son los objetivos de la asignatura?", "necesito información sobre la asignatura" ],
+         "responses": ["Periféricos y dispositivos de interfaz humana", "4º curso, Semestre 8º, Optativa. 6 créditos. Especialidad Sistemas de información", "Asignatura de la especialidad de Sistemas de información", "Asignatura del Grado en Ing. Informática",
+         "Definir el concepto de dispositivo periférico", "Describir las propiedades comunes a estas unidades que permiten intercambio de información de las unidades centrales con su mundo exterior", 
+         "Dar una clasificación y enumeración de los periféricos más comunes", "Dar una visión global del concepto de periférico y de cómo interactúa con el procesador y/o memoria", "La asignatura comprende 8 temas de teoría y 4 prácticas."],
+         "context": [""]
+        },
+
+        {"tag": "todos8temas",
+         "patterns": ["qué temas se imparten?", "qué contenidos se ven en la teoría?", "dame más detalles sobre los temas de teoría"],
+         "responses": ["Se imparten 8 temas en la teoría", "Tema 0: Presentación de la asignatura ; Tema 1: Introducción y conceptos ; Tema 2: Gestión de periféricos a bajo nivel ; Tema 3: Interfaces hardware para conexión de periféricos ; Tema 4: Dispositivos de entrada convencional ; Tema 5: Dispositivos de salida convencional ; Tema 6: Dispositivos de almacenamiento ; Tema 7: Periféricos para aplicaciones de ocio ; Tema 8: Sensores y actuadores"],
+         "context": [""]
+        },
+
+        {"tag": "tema1intro",
+         "patterns": ["qué contenidos se ven en el tema 1?", "dame más detalles sobre el tema 1"],
+         "responses": ["Tema 1: Introducción y conceptos", "Presentar los conceptos generales relativos a la asignatura."],
+         "context": [""]
+        },
+
+        {"tag": "tema2bajonivel",
+         "patterns": ["qué contenidos se ven en el tema 2?", "dame más detalles sobre el tema 2"],
+         "responses": ["Tema 2: Gestión de periféricos a bajo nivel", "Aprender a acceder a los periféricos de E/S a muy bajo nivel (incluso usando ensamblador o C)"],
+         "context": [""]
+        },
+
+        {"tag": "tema3hw",
+         "patterns": ["qué contenidos se ven en el tema 3?", "dame más detalles sobre el tema 3"],
+         "responses": ["Tema 3: Interfaces hardware para conexión de periféricos", "Detallar las conexiones hardware utilizadas (antigua y actualmente) para conectar dispositivos"],
+         "context": [""]
+        },
+
+        {"tag": "tema4entrada",
+         "patterns": ["qué contenidos se ven en el tema 4?", "dame más detalles sobre el tema 4"],
+         "responses": ["Tema 4: Dispositivos de entrada convencional", "Presentar los diferentes tipos de dispositivos de entrada que podemos utilizar.", "Los dispositivos de entrada transforman la información externa en señales codificadas"],
+         "context": [""]
+        },
+
+        {"tag": "tema5salida",
+         "patterns": ["qué contenidos se ven en el tema 5?", "dame más detalles sobre el tema 5"],
+         "responses": ["Tema 5: Dispositivos de salida convencional", "Presentar los diferentes tipos de dispositivos de salida que podemos utilizar.", "Los dispositivos de salida toman información binaria entendible por el procesador (y no por el humano) y la trasforma usando un código de E/S en información inteligible por el usuario (caracteres escritos o sonidos)."],
+         "context": [""]
+        },
+
+        {"tag": "tema6almacenamiento",
+         "patterns": ["qué contenidos se ven en el tema 6?", "dame más detalles sobre el tema 6"],
+         "responses": ["Tema 6: Dispositivos de almacenamiento", "Presentar los diferentes tipos de dispositivos de almacenamiento que podemos utilizar.", "Los dispositivos de almacenamiento usan principios magnético-ópticos. Solventan el problema de la volatilidad y pequeña capacidad de la memoria interna (registros y RAM)."],
+         "context": [""]
+        },
+
+        {"tag": "tema7ocio",
+         "patterns": ["qué contenidos se ven en el tema 7?", "dame más detalles sobre el tema 7"],
+         "responses": ["Tema 7: Periféricos para aplicaciones de ocio", "Presentar los diferentes tipos de dispositivos multimedia y de ocio."],
+         "context": [""]
+        },
+
+        {"tag": "tema8",
+         "patterns": ["qué contenidos se ven en el tema 8?", "dame más detalles sobre el tema 8"],
+         "responses": ["Tema 8: Sensores y actuadores", "Presentar otros tipos de periféricos sensores y actuadores, haciendo especial énfasis en los dispositivos de ayuda a personas dependientes."],
+         "context": [""]
+        },
+
+        {"tag": "evaluacion",
+         "patterns": ["cómo se realiza la evaluación?", "cómo se puntúa?", "qué partes se evalúan?", "dame más detalles sobre la evaluación" ],
+         "responses": ["Exámenes de teoría: máximo 4 puntos ; Seminarios y prácticas: máximo 4 puntos ; Trabajo de la asignatura: máximo 2 puntos", "examen, seminarios y prácticas"],
+         "context": [""]
+        },
+
+        {"tag": "preguntastema1",
+         "patterns": ["qué son los periféricos?", "Dispositivo de Interfaz Humana", "xxxx", "xxxx", "xxxx", "xxxx", "xxxx" ],
+         "responses": ["Periféricos son tanto las unidades o dispositivos a través de los que el procesador se comunica con el mundo exterior, como los sistemas que almacenan información", "dispositivo que permite una comunicación de la unidad básica con el exterior", "interfaces de usuario para computadores que interactúan directamente, tomando entradas proveniente de humanos, y pueden entregar una salida a los humanos", "yyy", "yyy", "yyy", "yyy"],
+         "context": [""]
+        },
+
+        {"tag": "preguntastema2",
+         "patterns": ["qué tipos de interrupciones existen?", "qué son las interrupciones BIOS", "qué son las interrupciones del sistema operativo" ],
+         "responses": ["Existen dos tipos de interrupciones: software y hardware.", "Dos categorías: las interrupciones del sistema operativo y las interrupciones BIOS.", "Las interrupciones del sistema operativo son más fáciles de usar pero también son más lentas ya que estas interrupciones hacen uso del BIOS para lograr su cometido.", "Las interrupciones BIOS son más rápidas pero como son parte del hardware son muy específicas y menos versátiles."],
+         "context": [""]
+        },
+        {"tag": "preguntastema3",
+         "patterns": ["qué es una interfaz?", "qué incluye la interfaz?", "cómo funciona?" ],
+         "responses": ["Interfaz (interface): nexo de conexión que facilita la comunicación entre dos dispositivos. ", "Incluye el controlador de dispositivo (device driver), el adaptador (host adapter) y la controladora (controller)", "Como ejemplo: las señales que detecta la cabeza lectora son convertidas por la controladora del disco; pasan a través del adaptador; y son interpretadas en el S.O. por el controlador del dispositivo."],
+         "context": [""]
+        }
+   ]
+}

@@ -1,0 +1,98 @@
+{"intents": [
+        {"tag": "saludos",
+         "patterns": ["Hola", "como estás?", "hay alguien?","chao","qué tal?", "buenos días", "buenas tardes", "buenas noches", "buenas"],
+         "responses": ["hola, gracias por preguntar", "encantado de verte", "hola, cómo puedo ayudarte?"],
+         "context": [""]
+        },
+        {"tag": "despedidas",
+         "patterns": ["adios", "hasta luego", "taluego", "un placer chatear contigo, adios", "hasta la próxima"],
+         "responses": ["hasta pronto!", "que tengas un buen día", "Adios. Vuelve pronto", "Adios"],
+         "context": [""]
+        },
+        {"tag": "agradecimientos",
+         "patterns": ["gracias", "muchas gracias", "ha sido de ayuda", "muchísimas gracias", "agradecido"],
+         "responses": ["feliz de ayudarte!", "de nada!", "un placer"],
+         "context": [""]
+        },
+        {"tag": "sinpregunta",
+         "patterns": [],
+         "responses": ["perdón, no te he entendido", "deme más información, por favor", "no estoy seguro de qué me pides"],
+         "context": [""]
+        },
+
+        {"tag": "opciones",
+         "patterns": ["cómo me puedes ayudar?", "qué puedes hacer?", "qué sabes hacer?", "cómo eres útil?", "qué soporte das?"],
+         "responses": ["Te puedo dar información sobre la asignatura y responder dudas sobre esta.", "Puedes hacerme preguntas sobre cualquier tema de la asignatura. Te intentaré ayudar.", "Puedo ayudarte a resolver dudas sobre la asignatura."],
+         "context": [""]
+        },
+
+        {"tag": "asignatura",
+         "patterns": ["cómo se llama la asignatura?", "qué asignatura?", "qué es SWAP?", "qué se enseña en servidores?", "qué se enseña en SWAP?", "cuáles son los objetivos de la asignatura?", "necesito información sobre la asignatura" ],
+         "responses": ["Servidores Web de Altas Prestaciones", "3º curso, Semestre 6º, 6 créditos. Especialidad Tecnologías de la información", "Asignatura de la especialidad de Tecnologías de la información", "Asignatura del Grado en Ing. Informática",
+         "Definir el concepto de servidores web de altas prestaciones", "Conceptos alta disponibilidad, redundancia y tolerancia a fallos; Determinar posibles problemas de escalabilidad de una instalación; Balanceador de carga", 
+         "Aprender a configurar un sistema web de altas prestaciones", "La asignatura comprende 8 temas de teoría y 6 prácticas."],
+         "context": [""]
+        },
+
+        {"tag": "todos8temas",
+         "patterns": ["qué temas se imparten?", "qué contenidos se ven en la teoría?", "dame más detalles sobre los temas de teoría"],
+         "responses": ["Se imparten 8 temas en la teoría", "Tema 1. Introducción; Tema 2. Alta disponibilidad y escalabilidad en servidores web; Tema 3. La red de una granja web; Tema 4. Balanceo de carga; Tema 5. Medición de prestaciones; Tema 6. Asegurar el sistema web; Tema 7. Almacenamiento de datos; Tema 8. Hardware y software para servidores web"],
+         "context": [""]
+        },
+
+        {"tag": "tema1intro",
+         "patterns": ["qué contenidos se ven en el tema 1?", "dame más detalles sobre el tema 1"],
+         "responses": ["Tema 1: Introducción", "dedicado a estudiar los problemas que podemos experimentar al montar un sitio web que tendrá muchos usuarios y un muy alto tráfico en una máquina sola. De esta forma justificaremos la necesidad de montar granjas web para estos sitios."],
+         "context": [""]
+        },
+
+        {"tag": "tema2bajonivel",
+         "patterns": ["qué contenidos se ven en el tema 2?", "dame más detalles sobre el tema 2"],
+         "responses": ["Tema 2. Alta disponibilidad y escalabilidad en servidores web", "presenta los conceptos de alta disponibilidad, escalabilidad y tolerancia a fallos en general. El objetivo siempre es crear sistemas que den servicio las 24h con el mínimo de errores"],
+         "context": [""]
+        },
+
+        {"tag": "tema3hw",
+         "patterns": ["qué contenidos se ven en el tema 3?", "dame más detalles sobre el tema 3"],
+         "responses": ["Tema 3. La red de una granja web", "presenta diferentes arquitecturas de red para crear una granja web, siempre con los objetivos de rendimiento, disponibilidad y facilidad de mantenimiento"],
+         "context": [""]
+        },
+
+        {"tag": "tema4entrada",
+         "patterns": ["qué contenidos se ven en el tema 4?", "dame más detalles sobre el tema 4"],
+         "responses": ["Tema 4. Balanceo de carga", "detalla diversas opciones de balanceo de carga, tanto software como hardware"],
+         "context": [""]
+        },
+
+        {"tag": "tema5salida",
+         "patterns": ["qué contenidos se ven en el tema 5?", "dame más detalles sobre el tema 5"],
+         "responses": ["Tema 5. Medición de prestaciones", "presenta algunas consideraciones sobre cómo evaluar las prestaciones de un sistema web de altas prestaciones, así como algunas herramientas."],
+         "context": [""]
+        },
+
+        {"tag": "tema6almacenamiento",
+         "patterns": ["qué contenidos se ven en el tema 6?", "dame más detalles sobre el tema 6"],
+         "responses": ["Tema 6. Asegurar el sistema web", "presenta los diferentes problemas de seguridad a tener en cuenta para asegurar los servidores. Se comentan las prácticas comunes para resolver problemas de seguridad, el uso de cortafuegos, protección de servidores y políticas de seguridad."],
+         "context": [""]
+        },
+
+        {"tag": "tema7ocio",
+         "patterns": ["qué contenidos se ven en el tema 7?", "dame más detalles sobre el tema 7"],
+         "responses": ["Tema 7. Almacenamiento de datos", "presenta diversas consideraciones a la hora de gestionar el almacenamiento de los datos en la granja web (discos RAID, unidades de disco en red, bases de datos de alta disponibilidad, etc)."],
+         "context": [""]
+        },
+
+        {"tag": "tema8",
+         "patterns": ["qué contenidos se ven en el tema 8?", "dame más detalles sobre el tema 8"],
+         "responses": ["Tema 8. Hardware y software para servidores web", "recoge los principales elementos para construir la red de la granja web; revisa los productos específicos de varios fabricantes, revisa el software utilizado al montar un sistema web de altas prestaciones, en cuanto a sistemas operativos como a herramientas de balanceo de carga o monitorización."],
+         "context": [""]
+        },
+
+        {"tag": "evaluacion",
+         "patterns": ["cómo se realiza la evaluación?", "cómo se puntúa?", "qué partes se evalúan?", "dame más detalles sobre la evaluación" ],
+         "responses": ["Exámenes de teoría: máximo 4 puntos ; Seminarios y prácticas: máximo 4 puntos ; Trabajo de la asignatura: máximo 2 puntos", "examen, seminarios y prácticas"],
+         "context": [""]
+        }
+
+   ]
+}
